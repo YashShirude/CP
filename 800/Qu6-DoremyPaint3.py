@@ -34,7 +34,36 @@ def insr():
 
 # 3. Core Logic Function
 def solve():
-    pass
+    n = inp()
+    arr = inlt()
+    hashMap = {}
+
+    for i in arr:
+        if(len(hashMap) > 2):
+            print("No\n")
+            return
+        hashMap[i] = hashMap.get(i,0) + 1
+    
+    if(len(hashMap) > 2):
+        print("No\n")
+        return
+    if(len(hashMap) <= 1):
+        print("Yes\n")
+        return
+
+    allCount = list(hashMap.values())
+    if(n % 2 == 0):
+        if(allCount[0] != allCount[1]):
+            print("No\n")
+            return
+    else:
+        if(abs(allCount[0]-allCount[1]) != 1):
+            print("No\n")
+            return
+    print("Yes\n")
+    
+
+
 
 
 # 4. Main Execution Block & File Redirection

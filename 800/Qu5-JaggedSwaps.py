@@ -34,7 +34,13 @@ def insr():
 
 # 3. Core Logic Function
 def solve():
-    pass
+    n = inp()
+    arr = inlt()
+
+    if arr[0] == 1:
+        print("YES\n")
+    else:
+        print("NO\n")
 
 
 # 4. Main Execution Block & File Redirection

@@ -34,7 +34,12 @@ def insr():
 
 # 3. Core Logic Function
 def solve():
-    pass
+    n = inp()
+
+    if n % 3 == 0:
+        print("Second\n")
+    else:
+        print("First\n")
 
 
 # 4. Main Execution Block & File Redirection

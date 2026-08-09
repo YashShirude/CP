@@ -34,7 +34,37 @@ def insr():
 
 # 3. Core Logic Function
 def solve():
-    pass
+    n, m = invr()
+    x = insr()
+    y = insr()
+    
+    # Early exit if y contains characters not in x
+    if not set(y).issubset(set(x)):
+        print("-1\n")
+        return
+
+    newX = x
+    count = 0
+
+    # 1. Keep doubling until length of newX is at least m
+    while len(newX) < m:
+        newX += newX
+        count += 1
+
+    # 2. Check if y is already present
+    if y in newX:
+        print(f"{count}\n")
+        return
+
+    # 3. Double ONE MORE TIME to catch overlap/wrap-around across original bounds
+    newX += newX
+    count += 1
+
+    if y in newX:
+        print(f"{count}\n")
+    else:
+        print("-1\n")
+
 
 
 # 4. Main Execution Block & File Redirection

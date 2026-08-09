@@ -34,7 +34,19 @@ def insr():
 
 # 3. Core Logic Function
 def solve():
-    pass
+    n = inlt()
+    cells = insr()
+
+    if "..." in cells:
+        print(str(2) + "\n")
+    else:
+        count = 0
+        for i in cells:
+            if(i == '.'):
+                count += 1
+        print(str(count) + "\n")
+    
+
 
 
 # 4. Main Execution Block & File Redirection

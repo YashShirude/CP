@@ -34,7 +34,27 @@ def insr():
 
 # 3. Core Logic Function
 def solve():
-    pass
+    s = insr()
+
+    oneCount = 0
+    zeroCount = 0
+    for char in s:
+        if char == '1':
+            oneCount += 1
+        else:
+            zeroCount += 1
+
+    for index,char in enumerate(s):
+        if char == '1' and zeroCount > 0:
+            zeroCount -= 1
+        elif char == '0' and oneCount > 0:
+            oneCount -= 1
+        else:
+            ans = len(s) - index
+            print(str(ans) + "\n")
+            return
+    print("0\n")
+    return 
 
 
 # 4. Main Execution Block & File Redirection
