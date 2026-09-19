@@ -35,7 +35,28 @@ def insr():
 
 # 3. Core Logic Function
 def solve():
-    pass
+    n, x = invr()
+    arr = inlt()
+
+    count = 0
+    min_dist = float('inf')
+    total_sum = 0
+    for i in range(len(arr)):
+        num = arr[i]
+        if num % x == 0: 
+            count += 1
+        else:
+            min_dist = min(min_dist, min(i-0+1,n-i))
+        total_sum += num
+
+    if count == n:
+        print(-1)
+        return
+
+    if total_sum % x == 0:
+        print(n - min_dist)
+        return
+    print(n)
 
 
 # 4. Main Execution Block & File Redirection
