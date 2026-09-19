@@ -38,26 +38,22 @@ def solve():
     a = inlt()
     x = inlt()
 
-    hashmap = {i:set() for i in x}
-    value_of_2 = [2**i for i in x]
+    effective_queries = []
+    min_seen = float('inf')
 
-    for i in range(len(a)):
-        num = a[i]
-        count_2 = (num & -num).bit_length() - 1
-        # print(str(count_2))
-        for n_val in hashmap:
-            if n_val <= count_2:
-                hashmap[n_val].add(i)
-    # print(str(hashmap))
+    for num in x:
+        if num < min_seen:
+            effective_queries.append(num)
+            min_seen = num
+    
+    for q in effective_queries:
+        add_value = 2 ** (q-1)
+        q_val = 2 ** (q)
 
-    for i in range(len(x)):
-        num = x[i]
-        arr = hashmap.get(num)
-        add_value = 1 << (num - 1)
-        for j in arr:
-            if a[j] % value_of_2[i] == 0:
-                a[j] += add_value
-        hashmap[num] = set()
+        for i in range(len(a)):
+            num = a[i]
+            if num % q_val == 0:
+                a[i] += add_value
 
     print(" ".join(map(str,a)) + "\n")
 
