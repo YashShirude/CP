@@ -49,7 +49,7 @@ def parse_sample_data(data_str):
 
 def run_checker():
     # 1. Parse sample inputs and outputs
-    sample_input, expected_output = parse_sample_data(sample_data)
+    sample_input = parse_sample_data(sample_data)
     if not sample_input:
         print("❌ Error: Sample data must contain both 'input' header.")
         sys.exit(1)
