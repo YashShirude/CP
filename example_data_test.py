@@ -5,7 +5,7 @@ import glob
 
 # --- Configuration ---
 rating = "1200"
-qu_no = "6"
+qu_no = "7"
 
 path = f"{rating}"
 file_prefix = f"Qu{qu_no}"
@@ -13,15 +13,18 @@ file_prefix = f"Qu{qu_no}"
 # Paste your sample data here (keep 'input' and 'output' labels)
 sample_data = """
 input
-4
-5
-1 3 3 3 7
-2
-4 2
-4
-1 1 1 1
-7
-5 4 2 1 0 0 4
+3
+3 5
+1 4 2 8 5
+7 9 2 1 4
+3 8 5 3 1
+1 4
+4 15 1 10
+4 3
+1 2 3
+3 2 1
+1 2 1
+4 2 7
 """
 
 def parse_sample_data(data_str):
