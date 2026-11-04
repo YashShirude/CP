@@ -54,10 +54,6 @@ def solve():
             return
     print(2)
 
-    
-
-
-
 # 4. Main Execution Block & File Redirection
 def main():
     # Automatically switch to local file I/O if input.txt exists on your machine
